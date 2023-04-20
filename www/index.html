@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bing Search SEO_HIF</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: rgb(114, 114, 114);
+      }
+      form {
+        margin: 0 auto; 
+        width:600px;
+        /* margin-bottom: 20px; */
+      }
+      input[type="text"] {
+        width: 50%;
+        padding: 8px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+      }
+      input[type="submit"] {
+        padding: 8px;
+        background-color: #0f0f0f;
+        color: rgba(255, 255, 255, 0.781);
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+      }
+      article {
+        margin-bottom: 20px;
+      }
+      h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+      a {
+        color: #2e0202;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      p {
+        margin: 0;
+      }
+      #pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      button {
+        padding: 8px;
+        background-color: #000000;
+        color: rgba(255, 255, 255, 0.623);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 5px;
+      }
+      button:hover {
+        background-color: #9e0000;
+      }
+      button:disabled {
+        background-color: #d9d9d933;
+        color: #a6a6a6;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="search-form">
+      <label for="search-term">Search:</label>
+      <input type="text" id="search-term" name="search-term" required>
+      <input type="submit" value="Search">
+    </form>
+    <br>
+    <br>
+    <div id="search-results"></div>
+    <div id="pagination">
+      <button id="prev-page" disabled>Previous</button>
+      <span>Page <span id="page-number">1</span> of <span id="total-pages">1</span></span>
+      <button id="next-page" disabled>Update</button>
+    </div>
+    <script src="/bing-search.js"></script>
+    <script src="/preprocessing_worker.js"></script>
+    <script src="/embedding_worker.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script> -->
+    <!-- <script src="tf_idf.js"></script> -->
+  </body>
+</html>

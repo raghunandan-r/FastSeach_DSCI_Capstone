@@ -1,0 +1,434 @@
+[
+    [],
+    "",
+    0,
+    "https://en.wikipedia.org/wiki/Cats_(disambiguation)",
+    "",
+    "Cats",
+    "",
+    "",
+    0,
+    0,
+    "",
+    {
+        "attribution": null,
+        "blockgroup": null,
+        "created_date": null,
+        "description": "Wikipedia",
+        "designer": null,
+        "dev_date": null,
+        "dev_milestone": "live",
+        "developer": [
+            {
+                "name": "DDG Team",
+                "type": "ddg",
+                "url": "http://www.duckduckhack.com"
+            }
+        ],
+        "example_query": "nikola tesla",
+        "id": "wikipedia_fathead",
+        "is_stackexchange": null,
+        "js_callback_name": "wikipedia",
+        "live_date": null,
+        "maintainer": {
+            "github": "duckduckgo"
+        },
+        "name": "Wikipedia",
+        "perl_module": "DDG::Fathead::Wikipedia",
+        "producer": null,
+        "production_state": "online",
+        "repo": "fathead",
+        "signal_from": "wikipedia_fathead",
+        "src_domain": "en.wikipedia.org",
+        "src_id": 1,
+        "src_name": "Wikipedia",
+        "src_options": {
+            "directory": "",
+            "is_fanon": 0,
+            "is_mediawiki": 1,
+            "is_wikipedia": 1,
+            "language": "en",
+            "min_abstract_length": "20",
+            "skip_abstract": 0,
+            "skip_abstract_paren": 0,
+            "skip_end": "0",
+            "skip_icon": 0,
+            "skip_image_name": 0,
+            "skip_qr": "",
+            "source_skip": "",
+            "src_info": ""
+        },
+        "src_url": null,
+        "status": "live",
+        "tab": "About",
+        "topic": [
+            "productivity"
+        ],
+        "unsafe": 0
+    },
+    "",
+    "Wikipedia",
+    "",
+    "",
+    "",
+    [
+        [
+            "https://duckduckgo.com/Cat",
+            [
+                "",
+                "",
+                "/i/90d64e34.jpg"
+            ],
+            "Cats A domestic species of small carnivorous mammal. It is the only domesticated species in the...",
+            "<a href=\"https://duckduckgo.com/Cat\">Cats</a> A domestic species of small carnivorous mammal. It is the only domesticated species in the..."
+        ],
+        [
+            "https://duckduckgo.com/Cats_(2019_film)",
+            [
+                "",
+                "",
+                ""
+            ],
+            "Cats (2019 film) A 2019 musical fantasy film based on the 1981 stage musical of the same name by Andrew Lloyd...",
+            "<a href=\"https://duckduckgo.com/Cats_(2019_film)\">Cats (2019 film)</a>A 2019 musical fantasy film based on the 1981 stage musical of the same name by Andrew Lloyd..."
+        ],
+        [
+            "https://duckduckgo.com/Cats_(musical)",
+            [
+                "",
+                "",
+                "/i/75cf8269.jpg"
+            ],
+            "Cats (musical) A sung-through musical composed by Andrew Lloyd Webber, based upon the 1939 poetry collection Old...",
+            "<a href=\"https://duckduckgo.com/Cats_(musical)\">Cats (musical)</a>A sung-through musical composed by Andrew Lloyd Webber, based upon the 1939 poetry collection Old..."
+        ],
+        [
+            "Entertainment and media",
+            [
+                [
+                    "https://duckduckgo.com/Cats_(1998_film)",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Cats (1998 film) A 1998 direct-to-video musical film based on the 1981 stage musical Cats by Andrew Lloyd Webber...",
+                    "<a href=\"https://duckduckgo.com/Cats_(1998_film)\">Cats (1998 film)</a>A 1998 direct-to-video musical film based on the 1981 stage musical Cats by Andrew Lloyd Webber..."
+                ],
+                [
+                    "https://duckduckgo.com/Cats_(1925_film)",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Cats (1925 film) A 1925 silent-era British comedy film directed by Leslie S. Hiscott and featuring Sydney...",
+                    "<a href=\"https://duckduckgo.com/Cats_(1925_film)\">Cats (1925 film)</a>A 1925 silent-era British comedy film directed by Leslie S. Hiscott and featuring Sydney..."
+                ],
+                [
+                    "https://duckduckgo.com/The_Cats",
+                    [
+                        "",
+                        "",
+                        "/i/1d9c8c9f.png"
+                    ],
+                    "The Cats A Dutch rock band formed in Volendam in 1964.",
+                    "<a href=\"https://duckduckgo.com/The_Cats\">The Cats</a>A Dutch rock band formed in Volendam in 1964."
+                ],
+                [
+                    "https://duckduckgo.com/The_Cats_(reggae_band)",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "The Cats (reggae band) A ska ensemble from Mile End, London.",
+                    "<a href=\"https://duckduckgo.com/The_Cats_(reggae_band)\">The Cats (reggae band)</a>A ska ensemble from Mile End, London."
+                ]
+            ]
+        ],
+        [
+            "People",
+            [
+                [
+                    "https://duckduckgo.com/Jacob_Cats",
+                    [
+                        "",
+                        "",
+                        "/i/8b60063e.jpg"
+                    ],
+                    "Jacob Cats A Dutch poet, humorist, jurist and politician. He is most famous for his emblem books.",
+                    "<a href=\"https://duckduckgo.com/Jacob_Cats\">Jacob Cats</a> A Dutch poet, humorist, jurist and politician. He is most famous for his emblem books."
+                ],
+                [
+                    "https://duckduckgo.com/Jacob_Cats_(painter)",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Jacob Cats (painter) Jacob Cats, an excellent Dutch draughtsman, who also etched and painted, was born at Altona in...",
+                    "<a href=\"https://duckduckgo.com/Jacob_Cats_(painter)\">Jacob Cats (painter)</a>Jacob Cats, an excellent Dutch draughtsman, who also etched and painted, was born at Altona in..."
+                ]
+            ]
+        ],
+        [
+            "Sports",
+            [
+                [
+                    "https://duckduckgo.com/Geelong_Football_Club",
+                    [
+                        "",
+                        "",
+                        "/i/81f19dfe.png"
+                    ],
+                    "Geelong Cats A professional Australian rules football club based in Geelong, Victoria, Australia.",
+                    "<a href=\"https://duckduckgo.com/Geelong_Football_Club\">Geelong Cats</a>A professional Australian rules football club based in Geelong, Victoria, Australia."
+                ],
+                [
+                    "https://duckduckgo.com/Kilkenny_GAA",
+                    [
+                        "",
+                        "",
+                        "/i/0ec46fd6.jpg"
+                    ],
+                    "Kilkenny GAA The Kilkenny County Board of the Gaelic Athletic Association is one of the 32 county boards of...",
+                    "<a href=\"https://duckduckgo.com/Kilkenny_GAA\">Kilkenny GAA</a>The Kilkenny County Board of the Gaelic Athletic Association is one of the 32 county boards of..."
+                ]
+            ]
+        ],
+        [
+            "Acronyms and abbreviations",
+            [
+                [
+                    "https://duckduckgo.com/Critics'_Awards_for_Theatre_in_Scotland",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Critics' Awards for Theatre in Scotland An annual event awarding performances \"substantially produced in Scotland, or developed...",
+                    "<a href=\"https://duckduckgo.com/Critics'_Awards_for_Theatre_in_Scotland\">Critics' Awards for Theatre in Scotland</a>An annual event awarding performances \"substantially produced in Scotland, or developed..."
+                ],
+                [
+                    "https://duckduckgo.com/Commonwealth_Accountability_Testing_System",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Commonwealth Accountability Testing System The assessment process for K-12 schools in Kentucky, United States.",
+                    "<a href=\"https://duckduckgo.com/Commonwealth_Accountability_Testing_System\">Commonwealth Accountability Testing System</a> The assessment process for K-12 schools in Kentucky, United States."
+                ],
+                [
+                    "https://duckduckgo.com/Credit_Accumulation_and_Transfer_Scheme",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Credit Accumulation and Transfer Scheme Credit Accumulation and Transfer Scheme is used by many universities in the United Kingdom to...",
+                    "<a href=\"https://duckduckgo.com/Credit_Accumulation_and_Transfer_Scheme\">Credit Accumulation and Transfer Scheme</a>Credit Accumulation and Transfer Scheme is used by many universities in the United Kingdom to..."
+                ],
+                [
+                    "https://duckduckgo.com/CATS_(astronomy)",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "CATS (astronomy) Categorizing Atmospheric Technosignatures, listing related to the atmospheres of astronomical...",
+                    "<a href=\"https://duckduckgo.com/CATS_(astronomy)\">CATS (astronomy)</a>Categorizing Atmospheric Technosignatures, listing related to the atmospheres of astronomical..."
+                ],
+                [
+                    "https://duckduckgo.com/CATS_(software)",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "CATS (software) An EDA software for mask data preparation in integrated circuit design and manufacturing.",
+                    "<a href=\"https://duckduckgo.com/CATS_(software)\">CATS (software)</a> An EDA software for mask data preparation in integrated circuit design and manufacturing."
+                ],
+                [
+                    "https://duckduckgo.com/Children's_Acute_Transport_Service",
+                    [
+                        "",
+                        "",
+                        "/i/c03e4fe2.png"
+                    ],
+                    "Children's Acute Transport Service A publicly funded specialised regional intensive care transport service for critically ill children.",
+                    "<a href=\"https://duckduckgo.com/Children's_Acute_Transport_Service\">Children's Acute Transport Service</a>A publicly funded specialised regional intensive care transport service for critically ill children."
+                ],
+                [
+                    "https://duckduckgo.com/Cloud_Aerosol_Transport_System",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Cloud Aerosol Transport System A light detection and ranging remote sensing instrument designed to measure the location...",
+                    "<a href=\"https://duckduckgo.com/Cloud_Aerosol_Transport_System\">Cloud Aerosol Transport System</a>A light detection and ranging remote sensing instrument designed to measure the location..."
+                ],
+                [
+                    "https://duckduckgo.com/Cognitive_analytic_therapy",
+                    [
+                        "",
+                        "",
+                        "/i/bc5b7cb8.jpg"
+                    ],
+                    "Cognitive analytic therapy A form of psychological therapy initially developed in the United Kingdom by Anthony Ryle.",
+                    "<a href=\"https://duckduckgo.com/Cognitive_analytic_therapy\">Cognitive analytic therapy</a> A form of psychological therapy initially developed in the United Kingdom by Anthony Ryle."
+                ],
+                [
+                    "https://duckduckgo.com/Active_suspension",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Computer Active Technology Suspension A type of automotive suspension on a vehicle.",
+                    "<a href=\"https://duckduckgo.com/Active_suspension\">Computer Active Technology Suspension</a> A type of automotive suspension on a vehicle."
+                ],
+                [
+                    "https://duckduckgo.com/Central_Area_Transmission_System",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "CATS pipeline A natural gas transportation and processing system that transports natural gas through a 404...",
+                    "<a href=\"https://duckduckgo.com/Central_Area_Transmission_System\">CATS pipeline</a>A natural gas transportation and processing system that transports natural gas through a 404..."
+                ],
+                [
+                    "https://duckduckgo.com/Canadian_American_Transportation_Systems",
+                    [
+                        "",
+                        "",
+                        "/i/183c21d9.png"
+                    ],
+                    "Canadian American Transportation Systems A company based in Rochester, New York which initiated a passenger/vehicle ferry service on Lake...",
+                    "<a href=\"https://duckduckgo.com/Canadian_American_Transportation_Systems\">Canadian American Transportation Systems</a>A company based in Rochester, New York which initiated a passenger/vehicle ferry service on Lake..."
+                ],
+                [
+                    "https://duckduckgo.com/Capital_Area_Transit_System",
+                    [
+                        16,
+                        16,
+                        "/i/www.brcats.com.ico"
+                    ],
+                    "Capital Area Transit System A public transportation provider in East Baton Rouge Parish, Louisiana.",
+                    "<a href=\"https://duckduckgo.com/Capital_Area_Transit_System\">Capital Area Transit System</a>A public transportation provider in East Baton Rouge Parish, Louisiana."
+                ],
+                [
+                    "https://duckduckgo.com/Charlotte_Area_Transit_System",
+                    [
+                        "",
+                        "",
+                        "/i/a8a1e755.png"
+                    ],
+                    "Charlotte Area Transit System The agency responsible for public transportation in the Charlotte metropolitan area.",
+                    "<a href=\"https://duckduckgo.com/Charlotte_Area_Transit_System\">Charlotte Area Transit System</a>The agency responsible for public transportation in the Charlotte metropolitan area."
+                ],
+                [
+                    "https://duckduckgo.com/Chicago_Metropolitan_Agency_for_Planning",
+                    [
+                        16,
+                        16,
+                        "/i/www.cmap.illinois.gov.ico"
+                    ],
+                    "Chicago Area Transportation Study The Chicago Metropolitan Agency for Planning is responsible for comprehensive regional...",
+                    "<a href=\"https://duckduckgo.com/Chicago_Metropolitan_Agency_for_Planning\">Chicago Area Transportation Study</a>The Chicago Metropolitan Agency for Planning is responsible for comprehensive regional..."
+                ],
+                [
+                    "https://duckduckgo.com/City_of_Anderson_Transit_System",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "City of Anderson Transit System The local bus service for Anderson, Indiana. CATS has 7 routes.",
+                    "<a href=\"https://duckduckgo.com/City_of_Anderson_Transit_System\">City of Anderson Transit System</a>The local bus service for Anderson, Indiana. CATS has 7 routes."
+                ],
+                [
+                    "https://duckduckgo.com/CATS_(trading_system)",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "CATS (trading system) An automated exchange system developed by the Toronto Stock Exchange.",
+                    "<a href=\"https://duckduckgo.com/CATS_(trading_system)\">CATS (trading system)</a>An automated exchange system developed by the Toronto Stock Exchange."
+                ],
+                [
+                    "https://duckduckgo.com/Central_Aut%C3%B3noma_de_Trabajadores_Salvadore%C3%B1os",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Central Aut\u00f3noma de Trabajadores Salvadore\u00f1os A trade union center in El Salvador.",
+                    "<a href=\"https://duckduckgo.com/Central_Aut%C3%B3noma_de_Trabajadores_Salvadore%C3%B1os\">Central Aut\u00f3noma de Trabajadores Salvadore\u00f1os</a>A trade union center in El Salvador."
+                ],
+                [
+                    "https://duckduckgo.com/Citizens_for_an_Alternative_Tax_System",
+                    [
+                        16,
+                        16,
+                        "/i/www.cats.org.ico"
+                    ],
+                    "Citizens for an Alternative Tax System A national tax reform public interest group in the United States.",
+                    "<a href=\"https://duckduckgo.com/Citizens_for_an_Alternative_Tax_System\">Citizens for an Alternative Tax System</a> A national tax reform public interest group in the United States."
+                ]
+            ]
+        ],
+        [
+            "See also",
+            [
+                [
+                    "https://duckduckgo.com/d/Cat",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Cat See related meanings for the word 'Cat'.",
+                    "<a href=\"https://duckduckgo.com/d/Cat\">Cat</a> See related meanings for the word 'Cat'."
+                ],
+                [
+                    "https://duckduckgo.com/d/The_Cats",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "The Cats See related meanings for the phrase 'The Cats'.",
+                    "<a href=\"https://duckduckgo.com/d/The_Cats\">The Cats</a> See related meanings for the phrase 'The Cats'."
+                ],
+                [
+                    "https://duckduckgo.com/d/Kats",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Kats See related meanings for the word 'Kats'.",
+                    "<a href=\"https://duckduckgo.com/d/Kats\">Kats</a> See related meanings for the word 'Kats'."
+                ],
+                [
+                    "https://duckduckgo.com/d/Katz",
+                    [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "Katz See related meanings for the word 'Katz'.",
+                    "<a href=\"https://duckduckgo.com/d/Katz\">Katz</a> See related meanings for the word 'Katz'."
+                ]
+            ]
+        ]
+    ],
+    "",
+    "",
+    "D"
+]
