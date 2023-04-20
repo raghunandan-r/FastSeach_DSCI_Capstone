@@ -95,7 +95,7 @@ function searchBingApi(searchTerm) {
   // Fetch data from API
   fetch(apiUrl, {
     headers: {
-      "Ocp-Apim-Subscription-Key": apiKey  //<replace> key here.
+      "Ocp-Apim-Subscription-Key": "apiKey"  //<-- replace apiKey here.
     }
   })
   .then(response => {
