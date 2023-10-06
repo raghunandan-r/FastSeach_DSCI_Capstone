@@ -8,7 +8,11 @@ const maxLength = 400;
  * @returns {Array<Object>} An array of search result objects with frequency vectors embedded.
  */
 function embed_freq(freqMap, searchResultsData){
-    searchResultsData.forEach(results =>{
+  
+  if (searchResultsData === undefined || searchResultsData === null) {
+      searchResultsData = [];  // Initialize if undefined or null
+  }  
+  searchResultsData.forEach(results =>{
         results.preprocessedResults.forEach(word =>{
             results.vectors.push(freqMap.get(word));
         })

@@ -10,6 +10,7 @@ const totalPageCount = document.querySelector('#total-pages');
 
 // Declare and initialize variables
 let currentPage = 1;
+let modelTrained = false;
 let totalResults = 0;
 let totalPages = 0;
 let currentOffset = 0;
@@ -50,14 +51,18 @@ preprocessing_worker.addEventListener('message', event => {
   searchResultsData = event.data[0];
   corpus = event.data[1];
   freqMap = event.data[2];
-  console.log('Preprocessing Worker acheived');
+  console.log('freqMap',freqMap);
   embedding_worker.postMessage([freqMap,searchResultsData]);
 });
 
 // receives embedded data from the worker and stores the results dataset not yet shown to user in testData.
 embedding_worker.addEventListener('message', event => {
   searchResultsData = event.data;
-  console.log('Embedding Worker acheived');
+  searchResultsData.map(obj =>{    
+    obj.clicks = -1;          
+    trainData.push(obj);    
+  })
+  console.log('Embedding Worker acheived',searchResultsData[0]);
   const startIndex = (currentPage - 1) * 10;
   const endIndex = startIndex + 10;
   testData = searchResultsData.slice(endIndex,);  
@@ -69,6 +74,7 @@ trainWorker.addEventListener('message', event=> {
   model = event.data;
   console.log('Model Trained');
   console.log(model);
+  //modelTrained = true
   scoreWorker.postMessage([model,testData]);
 });
 
@@ -87,10 +93,15 @@ scoreWorker.addEventListener('message', event => {
  * 
  * @param {string} searchTerm - search query from user
  */
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function searchBingApi(searchTerm) {
 
   // Construct API URL with search term and offset
-  const apiUrl = `https://api.bing.microsoft.com/v7.0/search?q=${encodeURIComponent(searchTerm)}&count=20&offset=${previousTotalResults}`;
+  const apiUrl = `https://api.bing.microsoft.com/v7.0/search?q=${encodeURIComponent(searchTerm)}&count=50&offset=${previousTotalResults}`;
 
   // Fetch data from API
   fetch(apiUrl, {
@@ -110,9 +121,15 @@ function searchBingApi(searchTerm) {
 
     previousTotalResults = previousTotalResults + totalResults;
     newSearchResultsData = data.webPages.value;
+    
+    //checkthis goddamn gpt fix
+    if (searchResultsData === undefined || searchResultsData === null) {
+      searchResultsData = [];  // Initialize if undefined or null
+    }
     searchResultsData = searchResultsData.concat(newSearchResultsData);
     
-    if(previousTotalResults>=60){
+    if(previousTotalResults>=500){
+
       // Display search results for first page
       displaySearchResults();
       // Update pagination
@@ -121,6 +138,11 @@ function searchBingApi(searchTerm) {
       preprocessing_worker.postMessage([searchResultsData,freqMap]);
 
     }else{
+      //sleep before making another call.
+      sleep(1000).then(() => {
+        console.log("Slept for 1 seconds");
+      });
+      
       searchBingApi(searchForm.elements['search-term'].value);
     }
     
@@ -148,8 +170,8 @@ nextPageButton.addEventListener('click', () => {
   currentOffset += 10;
   currentPage++;
 
-  // If nothing is clicked
-  if(Object.keys(trainData).length == 0){
+  // If nothing is clicked 
+  if(modelTrained == false){
     console.log("No Clicks recorded")
     displaySearchResults();
     updatePagination();
@@ -159,7 +181,7 @@ nextPageButton.addEventListener('click', () => {
     trainWorker.postMessage([trainData]);
 
     // Sort test data based on similarity scores
-    testData.sort((a, b) => b.score - a.score);
+    //testData.sort((a, b) => b.score - a.score);
   }
 });
 
@@ -170,14 +192,17 @@ function displaySearchResults() {
   const startIndex = (currentPage - 1) * 10;
   const endIndex = startIndex + 10;
   // If no results are clicked
-  if(Object.keys(trainData).length == 0){
+  if(modelTrained == false){    
     console.log("No clicks recorded for display")
     resultsToDisplay = searchResultsData.slice(startIndex, endIndex);
-  }else{
+    testData = searchResultsData.slice(endIndex,);
+  }
+  else{
     console.log("Fetching new ranked results")
     resultsToDisplay = testData.slice(0,10);
+    testData = testData.slice(11,);
   }
-  testData = searchResultsData.slice(endIndex,);
+  
 
   let html = '';
   resultsToDisplay.forEach(result => {
@@ -190,22 +215,25 @@ function displaySearchResults() {
   });
   searchResults.innerHTML = html;
   console.log("Search Results slice displayed for page",currentPage)
-
+  
+  //update displayed results to trainingData with clicks initialized negative
+    
+  
   // Count clicks on hyperlinks
   const hyperlinks = document.querySelectorAll('#search-results a');
   hyperlinks.forEach(hyperlink => {
     hyperlink.addEventListener('click', () => {
-      const clickedUrl = hyperlink.href;
-      // Adding number of clicks to the data
-      searchResultsData = searchResultsData.map(obj =>{
+      const clickedUrl = hyperlink.href;      
+      
+      trainData = trainData.map(obj =>{
         if(obj.url == clickedUrl){
-          obj.clicks++;
-          trainData.push(obj);
-          console.log('Click acknowledged',clickedUrl);
+          obj.clicks = 1;          
+          console.log('Click acknowledged',obj);
         }
         return obj;
       })
     });
+    modelTrained = true;
   });
 }
 
