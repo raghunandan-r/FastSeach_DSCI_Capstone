@@ -77,7 +77,7 @@ function create_freqMap(preprocessedResult){
  * @returns {Array<Object>} An array of preprocessed search result objects.
  */
 function preprocessing(searchResultsData) {
-    searchResultsData = removeDuplicates(searchResultsData);
+    //searchResultsData = removeDuplicates(searchResultsData);
 
     searchResultsData.forEach(result =>{
         preprocessedResult = clearText(result.snippet);

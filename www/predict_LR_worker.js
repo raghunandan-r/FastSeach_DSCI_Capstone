@@ -11,12 +11,21 @@ function magnitude(vec) {
 }
 
 function cosineSimilarity(A, B) {
+  if (A.length !== B.length) {
+    return null; // or throw an error
+  }
+
   let dotProduct = 0;
   for (let i = 0; i < A.length; i++) {
     dotProduct += A[i] * B[i];
   }
   
-  return dotProduct / (magnitude(A) * magnitude(B));
+  const denominator = magnitude(A) * magnitude(B);
+  if (denominator === 0) {
+    return 0;
+  }
+  
+  return dotProduct / denominator;
 }
 
 
@@ -42,7 +51,7 @@ class LinearSVM {
     return result;
   }
   
-  similarity(vec, weights) {
+  similarity( weights, vec) {
     return cosineSimilarity(weights, vec);
   }
 }
@@ -56,7 +65,7 @@ self.addEventListener("message", function (event) {
   const svm = new LinearSVM();  
   
   testData = testData.map(obj =>{
-      obj.similarity = svm.predict( model.weights, obj.vectors);
+      obj.similarity = svm.similarity( model.weights, obj.vectors);
       return obj;
     })
   // sort testdata basis the similarity scores
