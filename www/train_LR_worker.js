@@ -22,6 +22,7 @@ class LinearSVM {
 
   // Train the SVM
   train(data, labels, learningRate = 0.001, epochs = 1000) {
+    console.log("trainDataVecs", data);
     const n = data.length;
     const d = data[0].length;
 
