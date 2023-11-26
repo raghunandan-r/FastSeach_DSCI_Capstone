@@ -53,7 +53,7 @@ function removeStopwords(text){
  * @returns {Array<string>} An array of words.
  */
 function tokenizer(text){
-    return text.split(/\W+/);
+    return text.split(/\W+/).filter(token => token.length > 0);
 }
 
  
