@@ -49,10 +49,9 @@ let scoreWorker = new Worker('predict_LR_worker.js');
 // receives preprocessed data from the preprocessing_worker and passes data to the embedding_worker to obtain word embeddings.
 preprocessing_worker.addEventListener('message', event => {
   searchResultsData = event.data[0];
-  corpus = event.data[1];
-  freqMap = event.data[2];
-  console.log('freqMap',freqMap);
-  embedding_worker.postMessage([freqMap,searchResultsData]);
+  corpus = event.data[1];  
+  console.log('PreProcessing achieved');
+  embedding_worker.postMessage([corpus,searchResultsData]);
 });
 
 // receives embedded data from the worker and stores the results dataset not yet shown to user in testData.
@@ -135,7 +134,7 @@ function searchBingApi(searchTerm) {
       // Update pagination
       updatePagination();
 
-      preprocessing_worker.postMessage([searchResultsData,freqMap]);
+      preprocessing_worker.postMessage([searchResultsData]);
 
     }else{
       //sleep before making another call.
