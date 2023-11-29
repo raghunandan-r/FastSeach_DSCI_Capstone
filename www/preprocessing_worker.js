@@ -53,41 +53,27 @@ function removeStopwords(text){
  * @returns {Array<string>} An array of words.
  */
 function tokenizer(text){
-    return text.split(/\W+/);
+    return text.split(/\W+/).filter(token => token.length > 0);
 }
 
-/**
- * Creates a Map object representing the frequency of each word in an array of preprocessed words.
- * @param {Array<string>} preprocessedResult - An array of preprocessed words.
- * @returns {Map<string, number>} A Map object containing the frequency of each word.
- */
-function create_freqMap(preprocessedResult){
-    preprocessedResult.map(words =>{
-        if(!freqMap.has(words)){
-            freqMap.set(words, 0);
-        }
-        freqMap.set(words,freqMap.get(words)+1);
-    })
-    return freqMap;
-}
-  
+ 
 /**
  * Processes an array of search result objects by removing duplicates, preprocessing snippets of text, creating frequency maps, and initializing properties.
  * @param {Array<Object>} searchResultsData - An array of objects representing search results data.
  * @returns {Array<Object>} An array of preprocessed search result objects.
  */
 function preprocessing(searchResultsData) {
-    searchResultsData = removeDuplicates(searchResultsData);
+    //searchResultsData = removeDuplicates(searchResultsData);
 
     searchResultsData.forEach(result =>{
-        preprocessedResult = clearText(result.snippet);
+        let preprocessedResult = clearText(result.snippet);
         preprocessedResult = removeStopwords(preprocessedResult);
-        preprocessedResult = tokenizer(preprocessedResult);
-        result.preprocessedResults = preprocessedResult;
+        let tokenizedWords = tokenizer(preprocessedResult);
+        result.preprocessedResults = tokenizedWords;
         result.vectors = [];
         result.clicks = 0;
-        corpus.push(preprocessedResult);
-        freqMap = create_freqMap(preprocessedResult);
+        corpus.push(tokenizedWords);
+        
     })
 
     return searchResultsData;
@@ -96,8 +82,8 @@ function preprocessing(searchResultsData) {
 
 self.addEventListener('message', event => {
     searchResultsData = event.data[0];
-    freqMap = event.data[1];
+    
     // Perform preprocessing and vectorization
     const preprocessedData = preprocessing(searchResultsData);    
-    self.postMessage([preprocessedData,corpus,freqMap]);
+    self.postMessage([preprocessedData,corpus]);
 });
