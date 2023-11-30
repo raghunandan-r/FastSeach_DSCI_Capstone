@@ -144,6 +144,6 @@ function calculateTF(wordList, wordIndexMap) {
     // Perform preprocessing and vectorization
     const vectorizedData = embedFrequency(corpus, wordIndexMap, searchResultsData);
     // Send the vectorized data back to the main script
-    self.postMessage([vectorizedData]);
+    self.postMessage(vectorizedData);
   });
   

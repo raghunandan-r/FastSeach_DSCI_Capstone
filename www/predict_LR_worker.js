@@ -44,7 +44,7 @@ class LinearSVM {
       return -1; // or handle this scenario appropriately
     }
     const result = this.dotProduct(this.weights, vec) + this.bias;
-    return result >= 0 ? 1 : -1;
+    return result; // >= 0 ? 1 : -1;
   }
 }
 
@@ -66,5 +66,7 @@ self.addEventListener("message", function (event) {
   });
   
   // The testData array is now updated with similarity scores for each object
+  testData = testData.sort((a, b) => b.similarity - a.similarity);
+  console.log("testData from predict",testData);
   self.postMessage(testData);
 });

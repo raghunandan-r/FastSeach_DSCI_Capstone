@@ -10,7 +10,6 @@ const totalPageCount = document.querySelector('#total-pages');
 
 // Declare and initialize variables
 let currentPage = 1;
-let modelTrained = false;
 let totalResults = 0;
 let totalPages = 0;
 let currentOffset = 0;
@@ -57,10 +56,12 @@ preprocessing_worker.addEventListener('message', event => {
 // receives embedded data from the worker and stores the results dataset not yet shown to user in testData.
 embedding_worker.addEventListener('message', event => {
   searchResultsData = event.data;
+  
   searchResultsData.map(obj =>{    
     obj.clicks = -1;          
-    trainData.push(obj);    
+    //trainData.push(obj);    
   })
+  
   console.log('Embedding Worker acheived',searchResultsData[0]);
   const startIndex = (currentPage - 1) * 10;
   const endIndex = startIndex + 10;
@@ -73,7 +74,6 @@ trainWorker.addEventListener('message', event=> {
   model = event.data;
   console.log('Model Trained');
   console.log(model);
-  //modelTrained = true
   scoreWorker.postMessage([model,testData]);
 });
 
@@ -82,7 +82,7 @@ scoreWorker.addEventListener('message', event => {
   console.log("Reranked results");
 
   testData = event.data;
-  
+  console.log("testData from bingsearch",testData);
   displaySearchResults();
   updatePagination();
 })
@@ -168,9 +168,9 @@ prevPageButton.addEventListener('click', () => {
 nextPageButton.addEventListener('click', () => {
   currentOffset += 10;
   currentPage++;
-
+  console.log("lenght",Object.keys(trainData).length );
   // If nothing is clicked 
-  if(modelTrained == false){
+  if(Object.keys(trainData).length == 0){
     console.log("No Clicks recorded")
     displaySearchResults();
     updatePagination();
@@ -191,18 +191,19 @@ function displaySearchResults() {
   const startIndex = (currentPage - 1) * 10;
   const endIndex = startIndex + 10;
   // If no results are clicked
-  if(modelTrained == false){    
+  if(Object.keys(trainData).length == 0){    
     console.log("No clicks recorded for display")
-    resultsToDisplay = searchResultsData.slice(startIndex, endIndex);
-    testData = searchResultsData.slice(endIndex,);
+    resultsToDisplay = searchResultsData.slice(startIndex, endIndex); 
+    testData = searchResultsData.slice(endIndex,);   
   }
   else{
     console.log("Fetching new ranked results")
-    resultsToDisplay = testData.slice(0,10);
-    testData = testData.slice(11,);
+    resultsToDisplay = testData.slice(0,10);  
+    testData = testData.slice(endIndex,);  
   }
+  //testData = searchResultsData.slice(endIndex,);
   
-
+  console.log("resultsToDisplay",searchResultsData[0]);
   let html = '';
   resultsToDisplay.forEach(result => {
     html += `
@@ -224,15 +225,15 @@ function displaySearchResults() {
     hyperlink.addEventListener('click', () => {
       const clickedUrl = hyperlink.href;      
       
-      trainData = trainData.map(obj =>{
+      searchResultsData = searchResultsData.map(obj =>{
         if(obj.url == clickedUrl){
-          obj.clicks = 1;          
-          console.log('Click acknowledged',obj);
+          obj.clicks = 1;
+          trainData.push(obj);
+          console.log('Click acknowledged',clickedUrl);
         }
         return obj;
       })
     });
-    modelTrained = true;
   });
 }
 

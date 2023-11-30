@@ -63,7 +63,7 @@ function tokenizer(text){
  * @returns {Array<Object>} An array of preprocessed search result objects.
  */
 function preprocessing(searchResultsData) {
-    //searchResultsData = removeDuplicates(searchResultsData);
+    searchResultsData = removeDuplicates(searchResultsData);
 
     searchResultsData.forEach(result =>{
         let preprocessedResult = clearText(result.snippet);
