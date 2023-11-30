@@ -59,7 +59,7 @@ embedding_worker.addEventListener('message', event => {
   
   searchResultsData.map(obj =>{    
     obj.clicks = -1;          
-    //trainData.push(obj);    
+    trainData.push(obj);    
   })
   
   console.log('Embedding Worker acheived',searchResultsData[0]);
@@ -229,7 +229,7 @@ function displaySearchResults() {
         if(obj.url == clickedUrl){
           obj.clicks = 1;
           trainData.push(obj);
-          console.log('Click acknowledged',clickedUrl);
+          console.log('Click acknowledged',obj);
         }
         return obj;
       })

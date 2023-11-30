@@ -56,12 +56,24 @@ function calculateClassWeights(labels) {
     // If labels are numbers, convert them to strings for key access, or just use numbers as keys
     classFrequency[label.toString()]++;
   });
-
+/*
   let total = labels.length;
   let classWeights = {
     '-1': total / (2 * classFrequency['-1']),
     '1': total / (2 * classFrequency['1'])
   };
+*/
+
+let total = labels.length;
+let classWeights = {};
+
+for (const key in classFrequency) {
+  if (classFrequency[key] !== 0) {
+    classWeights[key] = total / classFrequency[key];
+  } else {
+    classWeights[key] = 0;
+  }
+}
 
   return classWeights;
 }
