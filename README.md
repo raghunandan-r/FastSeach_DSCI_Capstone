@@ -1,20 +1,44 @@
-# bing-E-search
 
-Bing-E is a search result optimization web app engine that takes into account human implicit feedback to rank search results. 
+# Project Readme: FastSearch - Enhancing Web Search Experience
 
-When a user interacts with a search result (for example, by clicking on it), our engine interprets the interaction as 
-implicit positive feedback. Results that are not yet shown to the user are reranked based on their similarity to the user feedback. 
-Our solution considers clicks on web pages as feedback and also currently limited to only positive feedback. 
-Refer our project here - https://www.overleaf.com/read/xmcfkpnvksqd 
+## Project Overview
+FastSearch is a project aimed at improving user experience in web searches. It leverages active learning to re-rank search results based on user engagement, with the goal of increasing click-through rates on subsequent pages.
+
+## Features
+- **User Engagement Analysis**: Utilizes implicit feedback from users' interactions with search results to infer relevance.
+- **Minimal Onboarding**: Easy accessibility with minimal user onboarding required. Features a prototype web application mimicking a search engine.
+- **Dynamic Search Result Re-ranking**: Ranks search results based on user behavior and similarity scores.
+
+## Getting Started
+
+### Installation
+- The project is currently in a prototype phase and is accessible at https://gifted-delightful-palladium.glitch.me/.
 
 ## Usage
+Users interact with the web application, which mimics a search engine. The application re-ranks search results based on the users' interactions with initial results.
 
-To use the tool, just head to https://bing-e-search.glitch.me/ in your web browser. For the time being, we need you to manually input the 'Bing' API key in the developer console. 
-When you enter a search query, the tool will retrieve search results and display them on the page. Clicking on search results, will be recorded as implicit feedback and used to improve future search rankings.
-Please check if the **next page results** are *more* relevant based on the links you have clicked. 
+## Data Description
+Data is scraped from the Bing search engine as per user queries. The first 10 results are shown to users and used for model training, while additional results are stored for later processing.
 
-## Future Development
+## Methodology
+1. **Data Collection**: Scraping search result data from Bing.
+2. **Preprocessing and Embedding**: Filtering top words by frequency and creating a tf-idf matrix.
+3. **User Behavior Analysis**: Analyzing user interactions through surveys to improve search algorithms.
+4. **Machine Learning Implementation**: Used active learning methodology to update the training dataset with user interactions and a tuned linearSVM model to classify relevant results.
+5. **Performance Analysis**: Used the Hall dataset from literature review to evaluate classifier performance.
+6. **Ranking Algorithm Implementation**: Utilized dot product for predicting similarity scores between test and train data.
+7. **Result Evaluation**: Measured effectiveness through metrics like click-through rate and no. of relevant results in next page results.
 
-In the future, the tool aims to include additional context such as time spent on websites, cross-session activity, and more. The tool also aims 
-to improve the algorithm used to rank search results based on implicit feedback.
+## Results and Discussion
+The project demonstrated improvement in classifying relevant results and achieved better accuracy and f1-scores. The precision metric, however, remains an area for improvement.
 
+## Issues and Future Work
+- **User Experience**: Addressing limitations in user experience due to restricted search result numbers and intended flow.
+- **Precision Improvement**: Exploring advanced methods like universal-sentence-encoder (USE) and language embeddings for precision enhancement.
+- **Application Expansion**: Considering the extension of the application to systematic literature review platforms like Google Scholar.
+
+## References
+- The project references studies in systematic literature review and information retrieval, focusing on active learning and semi-supervised learning methods.
+
+## Conclusion
+FastSearch offers a novel approach to enhancing web search results dynamically. It prioritizes user-friendliness and efficient processing, contributing to the research in enhancing literature reviews.
