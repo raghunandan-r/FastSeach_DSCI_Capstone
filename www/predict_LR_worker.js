@@ -66,5 +66,10 @@ self.addEventListener("message", function (event) {
   });
   
   // The testData array is now updated with similarity scores for each object
+  testData = testData.sort((a, b) => b.similarity - a.similarity);
+  console.log("testData from predict",testData);
+
+  
+  // The testData array is now updated with similarity scores for each object
   self.postMessage(testData);
 });
