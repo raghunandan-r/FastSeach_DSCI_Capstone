@@ -1,11 +1,22 @@
+/**
+ * Represents a linear support vector machine for making predictions.
+ */
 class LinearSVM {
-  // Constructor receives the model directly
+  /**
+   * Constructs a LinearSVM instance with a given model.
+   * @param {Object} model - The model containing the weights and bias.
+   */
   constructor(model) {
-    this.weights = model.weights; // Assume these are sparse
-    this.bias = model.bias;
+    this.weights = model.weights; // Sparse array representing the weights of the model
+    this.bias = model.bias; // Numeric bias of the model
   }
 
-  // Dot product for sparse vectors
+  /**
+   * Computes the dot product of two sparse vectors.
+   * @param {Array<Object>} v1 - The first sparse vector.
+   * @param {Array<Object>} v2 - The second sparse vector.
+   * @returns {number} The dot product of the two vectors.
+   */
   dotProductSparse(v1, v2) {
     let sum = 0;
     let i = 0, j = 0;
@@ -23,6 +34,12 @@ class LinearSVM {
     return sum;
   }
 
+  /**
+   * Computes the dot product of two vectors.
+   * @param {Array<number>} v1 - The first vector.
+   * @param {Array<number>} v2 - The second vector.
+   * @returns {number} The dot product of the two vectors.
+   */
   dotProduct(v1, v2) {
     if (!v1 || !v2) {
       console.error("One of the vectors is undefined", v1, v2);
@@ -36,9 +53,12 @@ class LinearSVM {
     return sum;
   }
 
-  // Make a prediction for a sparse vector
+  /**
+   * Makes a prediction for a given sparse vector.
+   * @param {Array<Object>} vec - The sparse vector for which to make the prediction.
+   * @returns {number} The predicted value.
+   */
   predict(vec) {
-    // Check if vec is defined
     if (!vec) {
       console.error("Undefined vector passed to predict", vec);
       return -1; // or handle this scenario appropriately
@@ -48,7 +68,9 @@ class LinearSVM {
   }
 }
 
-// Listener for incoming messages for predictions
+/**
+ * Event listener for incoming messages, used for making predictions.
+ */
 self.addEventListener("message", function (event) {
   const model = event.data[0]; // Contains the weights and bias
   let testData = event.data[1]; // Array of objects containing the sparse vectors
@@ -68,5 +90,5 @@ self.addEventListener("message", function (event) {
   // The testData array is now updated with similarity scores for each object
   testData = testData.sort((a, b) => b.similarity - a.similarity);
   console.log("testData from predict",testData);
-  self.postMessage(testData);
+  self.postMessage(testData); // Send the updated testData array back to the main thread
 });
